@@ -19,7 +19,7 @@ export default function Todo(){
                 </div>
                 <div className={styles.allTasks}>
                     <span className={styles.doneTasks}>concluidas</span>
-                    <span className={styles.count}>0</span>
+                    <span className={styles.count}>0 de 5</span>
                 </div>
             </div>
         </div>
