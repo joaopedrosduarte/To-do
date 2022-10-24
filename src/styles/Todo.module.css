@@ -1,0 +1,76 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+}
+
+.forms {
+    margin-top: -27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms textarea {
+    background-color: var(--gray500);
+    color: var(--gray300);
+    border-radius: 0.8rem;
+    border: 1px solid var(--gray700);
+    width: calc(39.875rem - 1.5rem);
+    font-size: 16px;
+    height: 54px;
+    line-height: 3.25;
+    padding-left: 1.5rem;
+    resize: none;
+}
+
+.forms button {
+    gap: 0.5rem;
+    display: flex;
+    font-size: 0.875rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bluedark);
+    font-weight: bold;
+    color: var(--gray100);
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    width: 90px;
+    height: 52px;
+}
+
+.counts {
+    font-weight: bold;
+    display: flex;
+    gap: 30.375rem;
+    justify-content: space-between;
+    margin: 0px auto;
+}
+
+.allTasks {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.allCreatedTasks div {
+    background-color: var(--gray400);
+}
+
+.counts .createdTasks {
+    color: var(--blue);
+}
+
+.counts .countNumber {
+    padding: 0px 8px;
+}
+
+.counts .count {
+    background-color: var(--gray400);
+    display: flex;
+    justify-content: center;
+    color: var(--gray200);
+}
+
+.counts .doneTasks {
+    color: var(--purple);
+}

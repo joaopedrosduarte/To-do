@@ -1,0 +1,34 @@
+.header {
+    background-color: var(--gray700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12.5rem;
+}
+
+.content {
+    display: flex;
+}
+
+.header p{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.header img{
+    margin-top: 5px;
+    width: 1.5rem;
+}
+
+.text {
+    display: flex;
+}
+
+.header .p1{
+    margin-left: 0.75rem;
+    color: var(--blue);
+}
+
+.header .p2{
+    color: var(--purpledark);
+}
