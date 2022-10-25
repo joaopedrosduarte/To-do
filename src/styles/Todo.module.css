@@ -39,12 +39,19 @@
     height: 52px;
 }
 
-.counts {
+.countIsEmpty {
     font-weight: bold;
     display: flex;
-    gap: 28.375rem;
+    gap: auto;
     justify-content: space-between;
     margin: 4rem auto 0rem auto;
+}
+
+.countIsNotEmpty {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 21.75rem 0rem 21.3rem;
+    font-weight: bold;
 }
 
 .allTasks {
@@ -57,23 +64,57 @@
     background-color: var(--gray400);
 }
 
-.counts .createdTasks {
+.createdTasks {
     color: var(--blue);
 }
 
-.counts .countNumber {
+.countNumber {
     padding: 0px 8px;
 }
 
-.counts .count {
+.count {
     border-radius: 10px;
-    padding: 0px 8px;
+    padding: 0px 0.75rem;
     background-color: var(--gray400);
     display: flex;
     justify-content: center;
     color: var(--gray200);
 }
 
-.counts .doneTasks {
+.doneTasks {
     color: var(--purple);
+}
+
+.empty {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--gray400);
+    border-radius: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem auto 4rem auto;
+    padding-top: 4rem;
+    color: var(--gray300);
+}
+
+.empty div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 13.25rem;
+}
+
+.empty div span {
+    color: var(--gray300);
+    display: block;
+    font-size: 16px;
+}
+
+.spanStrong {
+    font-weight: bold;
+}
+
+.tasks {
+    margin-bottom: 4rem;
 }
