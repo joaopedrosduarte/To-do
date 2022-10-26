@@ -14,6 +14,8 @@ export default function Task({content}: taskProps){
         circleButtonChecked ? (setCircleButtonChecked(false)) : (setCircleButtonChecked(true))
     }
 
+    
+
     return (
         <div className={circleButtonChecked ? (styles.taskNotChecked) : (styles.taskChecked)}>
             <div className={styles.wrapper}>

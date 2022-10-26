@@ -37,6 +37,23 @@
     border-radius: 0.5rem;
     width: 90px;
     height: 52px;
+    transition: .5s all ease;
+}
+
+.forms button:hover {
+    gap: 0.5rem;
+    display: flex;
+    font-size: 0.875rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    font-weight: bold;
+    color: var(--gray200);
+    border: none;
+    border-radius: 0.5rem;
+    width: 90px;
+    height: 52px;
+    transition: .5s all ease;
 }
 
 .countIsEmpty {
