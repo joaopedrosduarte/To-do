@@ -10,7 +10,7 @@ interface tasksProps{
 }
 
 export default function Todo(){
-    const [tasks, setTasks] = useState([{ id : 'Criar o Readme da aplicação.', content : 'Criar o Readme da aplicação.', status: "doing" },])
+    const [tasks, setTasks] = useState([{ id : 'Fazer toogle para troca de temas.', content : 'Fazer toogle para troca de temas.', status: "doing" },{ id : 'Fazer intro para o site', content : 'Fazer intro para o site', status: "doing" },{ id : 'Prototipar o tema claro', content : 'Prototipar o tema claro', status: "doing" }])
     const [newTask, setNewTask] = useState('')
 
     function handleNewTaskIsInvalid(event:InvalidEvent<HTMLTextAreaElement>){
