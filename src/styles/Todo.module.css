@@ -67,16 +67,17 @@
 .countIsEmpty {
     font-weight: bold;
     display: flex;
-    gap: 29.4rem;
+    gap: calc(736px - 266px);
     justify-content: space-between;
     margin: 4rem auto 0rem auto;
 }
 
 .countIsNotEmpty {
-    display: flex;
-    justify-content: space-between;
-    margin: 4rem 21.75rem 0rem 21.3rem;
     font-weight: bold;
+    display: flex;
+    gap: calc(736px - 293px);
+    justify-content: space-between;
+    margin: 4rem auto 0rem auto;
 }
 
 .allTasks {
