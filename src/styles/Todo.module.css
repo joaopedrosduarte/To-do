@@ -13,8 +13,8 @@
 
 .forms textarea {
     background-color: var(--gray500);
-    color: var(--gray300);
     border-radius: 0.8rem;
+    color: var(--gray200);
     border: 1px solid var(--gray700);
     width: calc(39.875rem - 1.5rem);
     font-size: 16px;
@@ -22,6 +22,14 @@
     line-height: 3.25;
     padding-left: 1.5rem;
     resize: none;
+}
+
+.forms textarea::placeholder {
+    color: var(--gray300);
+}
+
+.forms textarea:focus-within {
+    border: 1px solid var(--purple);
 }
 
 .forms button {
@@ -59,7 +67,7 @@
 .countIsEmpty {
     font-weight: bold;
     display: flex;
-    gap: auto;
+    gap: 29.4rem;
     justify-content: space-between;
     margin: 4rem auto 0rem auto;
 }
@@ -104,9 +112,9 @@
 
 .empty {
     display: flex;
+    width: 736px;
     align-items: center;
     border-top: 1px solid var(--gray400);
-    border-radius: 0.5rem;
     flex-direction: column;
     gap: 1rem;
     margin: 1.5rem auto 4rem auto;
@@ -119,7 +127,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 13.25rem;
 }
 
 .empty div span {

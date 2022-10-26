@@ -1,6 +1,6 @@
 import {ClipboardText, PlusCircle} from "phosphor-react"
 import styles from "../styles/Todo.module.css"
-import { useState } from "react"
+import { InvalidEvent, useState, ChangeEvent, FormEvent } from "react"
 import Task from './Task';
 
 interface tasksProps{
@@ -10,36 +10,74 @@ interface tasksProps{
 }
 
 export default function Todo(){
-    const [tasksArray, setTasksArray] = useState([{ id : '1', content : 'Criar o Readme da aplicação.', status: "doing" },{ id: '3', content: 'Fazer o codigo do todo.', status: "doing" }, { id: '2', content : 'Terminar o JavaScript.', status: "done" }, { id: '4', content: 'Finalizar a UI do site.', status: 'doing' }])
+    const [tasks, setTasks] = useState([{ id : 'Criar o Readme da aplicação.', content : 'Criar o Readme da aplicação.', status: "doing" },])
+    const [newTask, setNewTask] = useState('')
+
+    function handleNewTaskIsInvalid(event:InvalidEvent<HTMLTextAreaElement>){
+        event.target.setCustomValidity('Esse campo é obrigatorio!');
+    }
+    
+    function handleNewTaskChange(event:ChangeEvent<HTMLTextAreaElement>){
+        event.target.setCustomValidity('')
+        setNewTask(event.target.value)
+    }
+    
+    function handleNewTask(event:FormEvent){
+        event.preventDefault();
+        setTasks([...tasks, {id:newTask, content:newTask, status:"doing"}])
+        setNewTask('')
+    }
+
+    function handleChangeTaskStatus(taskContent:string, ){
+        const newArrayTasks= tasks.map(task => {
+            if (task.content === taskContent){
+                if (task.status == 'done'){
+                    task.status = 'doing'
+                } else {
+                    task.status = 'done'
+                }
+            }
+            return task
+        })
+
+        setTasks(newArrayTasks)
+    }
+    
+    function handleDeleteTask(taskContent:string){
+        const newArrayTasks= tasks.filter(task => {
+            return task.content !== taskContent
+        })
+        
+        setTasks(newArrayTasks);
+    }
 
     function getNumOfDoneTasks(){
-        let i = tasksArray.filter(task => task.status === 'done').length
+        let i = tasks.filter(task => task.status === 'done').length
 
         return i
     }
-
+    
     return (
         <div className={styles.todo}>
-            <form className={styles.forms}>
-                <textarea placeholder="Adicione uma nova tarefa"></textarea>
+            <form className={styles.forms} onSubmit={handleNewTask} onKeyPress={event => { if (event.key === 'Enter'){handleNewTask}}}>
+                <textarea required onInvalid={handleNewTaskIsInvalid} onChange={handleNewTaskChange} placeholder="Adicione uma nova tarefa" value={newTask}></textarea>
                 <button>
                     <span>Criar</span><PlusCircle size={16} weight='bold' />
                 </button>
             </form>
-            <div className={tasksArray.length == 0 ? styles.countIsEmpty : styles.countIsNotEmpty }>
+            <div className={tasks.length == 0 ? styles.countIsEmpty : styles.countIsNotEmpty }>
                 <div className={styles.allTasks}>
                     <span className={styles.createdTasks}>Tarefas Criadas</span>
-                    <span className={styles.count}>{tasksArray.length}</span>
+                    <span className={styles.count}>{tasks.length}</span>
                 </div>
                 <div className={styles.allTasks}> 
                     <span className={styles.doneTasks}>concluidas</span>
-                    <span className={styles.count}>{tasksArray.length == 0 ? "0" : 
-                    getNumOfDoneTasks().toString() + " de " + tasksArray.length }</span>
+                    <span className={styles.count}>{tasks.length == 0 ? "0" : 
+                    getNumOfDoneTasks().toString() + " de " + tasks.length }</span>
                 </div>
             </div>
-            {/* missing logic */}
             <div className={styles.tasks}>
-                {(tasksArray.length == 0 ?
+                {(tasks.length == 0 ?
                 <div className={styles.empty}>
                     <ClipboardText size={64} color="#333333" weight="thin" className={styles.clipBoard}/>
                     <div>
@@ -48,9 +86,9 @@ export default function Todo(){
                     </div>
                 </div>
                 :
-                tasksArray.map(task => {
+                tasks.map(task => {
                     return(
-                    <Task  key={task.id} content={task.content} />
+                    <Task  key={task.id} content={task.content} onHandleChangeTaskStatus={handleChangeTaskStatus} onHandleDeleteTask={handleDeleteTask} />
                     )
                 }))}
             </div>
