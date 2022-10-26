@@ -24,7 +24,7 @@ export default function Todo(){
     
     function handleNewTask(event:FormEvent){
         event.preventDefault();
-        setTasks([...tasks, {id:newTask, content:newTask, status:"doing"}])
+        setTasks([{id:newTask, content:newTask, status:"doing"}, ...tasks])
         setNewTask('')
     }
 
