@@ -1,4 +1,4 @@
-.task {
+.taskChecked {
     display: flex;
     justify-content: center;
     margin: auto;
@@ -8,6 +8,20 @@
     color: var(--gray100);
     border-radius: 0.5rem;
     border: 1px solid var(--gray400);
+    transition: 0.5s all;
+}
+
+.taskNotChecked{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1.5rem;
+    width: calc(46rem);
+    background-color: var(--gray500);
+    color: var(--gray100);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray500);
+    transition: 0.5s all;
 }
 
 .wrapper {
@@ -27,40 +41,81 @@
 
 .circleButtonWrapper {
     display: flex;
+}
+
+.circleButtonWrapper input {
+    opacity: 0%;
+    width: 0px;
+    height: 0px;
+}
+
+.circleButtonWrapper input[type=checkbox] + div {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    border-radius: 50%;
+    background-color: var(--gray500);
+    border: 1.5px solid var(--blue);
+    height: 15.5px;
+    width: 15.5px;
+    transition: .5s all ease;
+}
+
+.circleButtonWrapper input[type=checkbox] + div:hover {
+    background-color: var(--darkbluelowopacity);
+    border-color: var(--darkblue);
+    transition: .5s all ease;
+}
+
+.circleButtonWrapper input[type=checkbox]:checked + div {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    border-radius: 50%;
+    background-color: var(--darkpurple);
+    border: 1.5px solid var(--darkpurple);
+    height: 15.5px;
+    width: 15.5px;
+    transition: .1s all ease;
+    content: "";
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
-
-.circleButton {
+.circleButtonWrapper input[type=checkbox]:checked + div:hover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    margin: 0.125rem 0.25rem auto 0.25rem;
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--gray500);
-    border: 1.9px solid var(--blue);
     border-radius: 50%;
-}
-
-.circleButton input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.circleButton:hover {
-    transition: background-color 0.1s;
-    background-color: var(--darkbluelowopacity);
-    transition: border-color 0.1s;
-    border-color: var(--darkblue);
-}
-
-.circleButton:checked {
     background-color: var(--purple);
+    border: 1.5px solid var(--purple);
+    height: 15.5px;
+    width: 15.5px;
+    transition: .1s all ease;
+    content: "";
+    justify-content: center;
+    align-items: center;
 }
 
-.content {
+.contentChecked {
     flex: 1;
+    text-decoration-color: var(--gray300);
+    text-decoration: line-through;
+    color: var(--gray300);
+    transition: 0.5s all ease;
+}
+
+.contentNotChecked {
+    flex: 1;
+    text-decoration-color: transparent;
+    text-decoration: line-through;
+    color: var(--gray200);
+    transition: 0.5s all ease;
 }
 
 .trashCanButton {

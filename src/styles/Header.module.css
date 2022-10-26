@@ -8,16 +8,13 @@
 
 .content {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header p{
     font-size: 2.5rem;
     font-weight: 900;
-}
-
-.header img{
-    margin-top: 5px;
-    width: 1.5rem;
 }
 
 .text {

@@ -1,42 +1,19 @@
 import {ClipboardText, PlusCircle} from "phosphor-react"
 import styles from "../styles/Todo.module.css"
-import emptyImage from "../assets/empty-img.svg"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Task from './Task';
 
-interface todoProps{
+interface tasksProps{
     id: string,
     content: string,
     status: "doing" | "done"
 }
 
-const tasks:todoProps[] = [
-    {
-        id : '1',
-        content : 'Criar o Readme da aplicação',
-        status: "doing"
-    },
-    {
-        id: '3',
-        content: 'Fazer o codigo do todo',
-        status: "doing"
-    },
-    {
-        id: '2',
-        content : 'Terminar o JavaScript',
-        status: "done"
-    },
-    {
-        id: '4',
-        content: 'Finalizar a UI do site',
-        status: 'doing'
-    }
-]
-
 export default function Todo(){
+    const [tasksArray, setTasksArray] = useState([{ id : '1', content : 'Criar o Readme da aplicação.', status: "doing" },{ id: '3', content: 'Fazer o codigo do todo.', status: "doing" }, { id: '2', content : 'Terminar o JavaScript.', status: "done" }, { id: '4', content: 'Finalizar a UI do site.', status: 'doing' }])
 
     function getNumOfDoneTasks(){
-        let i = tasks.filter(task => task.status === 'done').length
+        let i = tasksArray.filter(task => task.status === 'done').length
 
         return i
     }
@@ -49,20 +26,20 @@ export default function Todo(){
                     <span>Criar</span><PlusCircle size={16} weight='bold' />
                 </button>
             </form>
-            <div className={tasks.length == 0 ? styles.countIsEmpty : styles.countIsNotEmpty }>
+            <div className={tasksArray.length == 0 ? styles.countIsEmpty : styles.countIsNotEmpty }>
                 <div className={styles.allTasks}>
                     <span className={styles.createdTasks}>Tarefas Criadas</span>
-                    <span className={styles.count}>{tasks.length}</span>
+                    <span className={styles.count}>{tasksArray.length}</span>
                 </div>
                 <div className={styles.allTasks}> 
                     <span className={styles.doneTasks}>concluidas</span>
-                    <span className={styles.count}>{tasks.length == 0 ? "0" : 
-                    getNumOfDoneTasks().toString() + " de " + tasks.length }</span>
+                    <span className={styles.count}>{tasksArray.length == 0 ? "0" : 
+                    getNumOfDoneTasks().toString() + " de " + tasksArray.length }</span>
                 </div>
             </div>
             {/* missing logic */}
             <div className={styles.tasks}>
-                {(tasks.length == 0 ?
+                {(tasksArray.length == 0 ?
                 <div className={styles.empty}>
                     <ClipboardText size={64} color="#333333" weight="thin" className={styles.clipBoard}/>
                     <div>
@@ -71,7 +48,7 @@ export default function Todo(){
                     </div>
                 </div>
                 :
-                tasks.map(task => {
+                tasksArray.map(task => {
                     return(
                     <Task  key={task.id} content={task.content} />
                     )
