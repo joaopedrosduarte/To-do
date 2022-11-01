@@ -3,12 +3,6 @@ import styles from "../styles/Todo.module.css"
 import { InvalidEvent, useState, ChangeEvent, FormEvent } from "react"
 import Task from './Task';
 
-interface tasksProps{
-    id: string,
-    content: string,
-    status: "doing" | "done"
-}
-
 export default function Todo(){
     const [tasks, setTasks] = useState([{ id : 'Fazer toogle para troca de temas.', content : 'Fazer toogle para troca de temas.', status: "doing" },{ id : 'Fazer intro para o site', content : 'Fazer intro para o site', status: "doing" },{ id : 'Prototipar o tema claro', content : 'Prototipar o tema claro', status: "doing" }])
     const [newTask, setNewTask] = useState('')

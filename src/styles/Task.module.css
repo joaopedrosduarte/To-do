@@ -113,7 +113,7 @@
 .contentNotChecked {
     flex: 1;
     text-decoration-color: transparent;
-    text-decoration: line-through;
+    text-decoration: transparent;
     color: var(--gray200);
     transition: 0.5s all ease;
 }
