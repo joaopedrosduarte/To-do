@@ -1,13 +1,16 @@
-import styles from "./styles/global.css"
+import styles from "./styles/App.module.css"
 import Header from './components/Header';
 import Todo from './components/Todo';
+import './styles/global.css'
 
 function App() {
 
   return (
-    <div className={styles}>
+    <div className={styles.content}>
       <Header />
-      <Todo />
+      <main className={styles.wrapper}>
+        <Todo />
+      </main>
     </div>
   )
 }

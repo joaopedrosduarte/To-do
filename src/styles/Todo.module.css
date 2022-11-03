@@ -1,5 +1,5 @@
 .todo {
-    display: flex;
+    display:  grid;
     flex-direction: column;
 }
 
@@ -68,7 +68,6 @@
 .countIsEmpty {
     font-weight: bold;
     display: flex;
-    gap: calc(736px - 266px);
     justify-content: space-between;
     margin: 4rem auto 0rem auto;
 }
@@ -76,9 +75,8 @@
 .countIsNotEmpty {
     font-weight: bold;
     display: flex;
-    gap: calc(736px - 293px);
     justify-content: space-between;
-    margin: 4rem auto 0rem auto;
+    margin-top: 4rem;
 }
 
 .allTasks {
