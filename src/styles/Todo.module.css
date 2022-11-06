@@ -1,7 +1,6 @@
 .todo {
-    display:  grid;
+    display: grid;
     flex-direction: column;
-    margin: 0px 8px;
 }
 
 .forms {
