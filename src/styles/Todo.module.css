@@ -1,6 +1,7 @@
 .todo {
     display:  grid;
     flex-direction: column;
+    margin: 0px 8px;
 }
 
 .forms {
@@ -17,7 +18,7 @@
     font-family: 'Inter', sans-serif;
     color: var(--gray200);
     border: 1px solid var(--gray700);
-    width: calc(39.875rem - 1.5rem);
+    flex: 1;
     font-size: 16px;
     height: 54px;
     line-height: 3.25;
@@ -60,7 +61,6 @@
     color: var(--gray200);
     border: none;
     border-radius: 0.5rem;
-    width: 90px;
     height: 52px;
     transition: .5s all ease;
 }
