@@ -1,5 +1,6 @@
 .todo {
-    display: grid;
+    max-width: 738px;
+    display: flex;
     flex-direction: column;
 }
 

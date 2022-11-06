@@ -1,5 +1,4 @@
 import style from "../styles/Header.module.css"
-import logo from "../assets/logo-Todo.svg"
 import LogoTodo from './LogoTodo';
 
 export default function Header() {

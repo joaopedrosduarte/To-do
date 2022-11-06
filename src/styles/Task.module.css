@@ -3,7 +3,7 @@
     justify-content: center;
     margin: auto;
     margin-top: 1.5rem;
-    width: calc(46rem);
+    width: auto;
     background-color: var(--gray500);
     color: var(--gray100);
     border-radius: 0.5rem;
