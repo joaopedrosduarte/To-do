@@ -72,7 +72,7 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    margin: 4rem auto 0rem auto;
+    margin: 4rem 0px 0rem 0px;
 }
 
 .countIsNotEmpty {
@@ -115,7 +115,6 @@
 
 .empty {
     display: flex;
-    width: 736px;
     align-items: center;
     border-top: 1px solid var(--gray400);
     flex-direction: column;
