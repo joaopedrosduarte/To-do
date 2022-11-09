@@ -1,0 +1,30 @@
+.intro {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray700);
+    opacity: 1;
+}
+
+.text {
+    display: flex;
+}
+
+.text p {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.p1{
+    margin-left: 0.75rem;
+    color: var(--blue);
+}
+
+.p2{
+    color: var(--darkpurple);
+}
