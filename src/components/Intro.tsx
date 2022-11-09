@@ -16,7 +16,7 @@ export default function Intro(){
 			duration: 5,
 			type: "spring",
 			damping: 20,
-			stiffness: 700,
+			stiffness: 500,
 		}
 	}
 
