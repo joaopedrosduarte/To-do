@@ -6,21 +6,24 @@ import { useState, useEffect } from 'react';
 export default function Intro(){
 	const [p1, setP1] = useState({Y: "0", opacity: 1});
 	const [p2, setP2] = useState({Y: "0", opacity: 1});
-	const [rocket, setRocket] = useState({X: "0", opacity: 1});
+	const [rocket, setRocket] = useState({Y: "0", X: "0", opacity: 1});
 	const [intro, setIntro] = useState({Y: "0", opacity: 1});
 
 	const activeRocket = {
 		x: rocket.X,
+		y: rocket.Y,
 		transition: {
-			duration: 2,
+			duration: 5,
 			type: "spring",
+			damping: 20,
+			stiffness: 700,
 		}
 	}
 
 	const activeIntro = {
 		y: intro.Y,
 		transition: {
-			duration: 2,
+			duration: 1.5,
 			type: "spring",
 		}
 	}
@@ -51,11 +54,14 @@ export default function Intro(){
 			setP2({Y: "-10vh", opacity: 0});
 		}, 800);
 		setTimeout(() => {
-			setRocket({X: "7vh", opacity: 1});
-		}, 1200);
+			setRocket({Y: "0", X: "6.5vh", opacity: 1});
+		}, 1400);
+		setTimeout(() => {
+			setRocket({Y: "-50vh", X: "6.5vh", opacity: 0});
+		}, 2000);
 		setTimeout(() => {
 			setIntro({Y: "-100vh", opacity: 1});
-		}, 2200);
+		}, 2000);
 	},[])
 
 	return(

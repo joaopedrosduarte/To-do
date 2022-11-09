@@ -53,7 +53,7 @@ export default function Todo(){
     
     return (
         <div className={styles.todo}>
-            <form className={styles.forms} onSubmit={handleNewTask} >
+            <form className={styles.forms} onSubmit={handleNewTask} onKeyPress={event => {if (event.key === 'Enter'){handleNewTask}}}>
                 <textarea required onInvalid={handleNewTaskIsInvalid} onChange={handleNewTaskChange} placeholder="Adicione uma nova tarefa" value={newTask} onKeyPress={event => {if (event.key === 'Enter'){handleNewTask}}}></textarea>
                 <button>
                     <span>Criar</span><PlusCircle size={16} weight='bold' />
